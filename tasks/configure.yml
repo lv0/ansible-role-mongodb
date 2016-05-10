@@ -54,7 +54,7 @@
   set_fact:
     wait_for_host: 127.0.0.1
   when: mongodb_net_bindip == "0.0.0.0"
-  
+ 
 - name: Wait when mongodb is started
   wait_for:
     host: "{{ wait_for_host | default(mongodb_net_bindip) }}"
