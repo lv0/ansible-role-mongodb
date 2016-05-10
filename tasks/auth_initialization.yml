@@ -65,7 +65,7 @@
       }
 
 - name: Move back mongod.conf
-  template: src=mongod.conf.j2 dest=/etc/mongod.conf owner=root group=root mode=0644
+  template: src=etc/mongod.conf.j2 dest=/etc/mongod.conf owner=root group=root mode=0644
 
 - name: Restart mongodb service
   service: name={{ mongodb_daemon_name }} state=restarted
