@@ -40,7 +40,10 @@
     recurse: yes
 
 - name: Configure mongodb
-  template: src=mongod.conf.j2 dest=/etc/mongod.conf backup=yes owner=root group=root mode=0644
+  template: src={{ item }}/mongod.conf.j2 dest=/{{ item }}/mongod.conf backup=yes owner=root group=root mode=0644
+  with_items:
+    - etc
+    - etc/init
   register: config_result
 
 - name: mongodb restart
