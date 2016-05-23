@@ -42,7 +42,7 @@
   apt: name={{item}} state=present
   with_items:
     - "{{mongodb_package}}"
-    - numactl
+    - libnuma1
 
 - name: reload systemd
   shell: systemctl daemon-reload
