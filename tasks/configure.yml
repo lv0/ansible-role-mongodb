@@ -59,4 +59,4 @@
   wait_for:
     host: "{{ wait_for_host | default(mongodb_net_bindip) }}"
     port: "{{ mongodb_net_port }}"
-    timeout: 120
+    timeout: 360
